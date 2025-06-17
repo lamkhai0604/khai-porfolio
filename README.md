@@ -1,106 +1,50 @@
-<<<<<<< HEAD
-# React + Vite
+# 🌟 Khai's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website, built to showcase my skills, experience, and featured projects as a front-end developer.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-<<<<<<< HEAD
-# khai-porfolio
-=======
-# Welcome to React Router!
-
-A modern, production-ready template for building full-stack React applications using React Router.
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
-
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+This project is designed to serve as a professional introduction for potential employers, collaborators, or anyone curious about my work.
 
 ---
 
-Built with ❤️ using React Router.
->>>>>>> 3a46df5 (Initial commit from create-react-router)
->>>>>>> c751437e58dd9347699be1c829e13ed8f97c3dc9
+## 🛠️ Tech Stack
+
+- **React** – Component-based architecture for fast, dynamic UIs
+- **Tailwind CSS** – Utility-first styling for responsive design
+
+---
+
+## ✨ Features
+
+- Clean and responsive layout across all screen sizes
+- Project highlights with descriptions and live links
+- Professional summary and skills section
+- Interactive UI with subtle animations
+- Contact information and call-to-action
+
+---
+
+## 📦 Installation & Development
+
+```bash
+# Clone the repository
+git clone https://github.com/lamkhai0604/khai-porfolio.git
+
+# Navigate into the project directory
+cd khai-portfolio
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+```
+
+---
+
+## 📦 Contact
+
+Feel free to connect with me via:
+
+📧 Email: lamkhai0604@gmail.com
+
+💼 LinkedIn: linkedin.com/in/khailam0604
