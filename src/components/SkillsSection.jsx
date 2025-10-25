@@ -3,18 +3,18 @@ import { cn } from '../lib/utils';
 
 const skills = [
   { name: 'HTML/CSS', level: 80, category: 'frontend' },
-  { name: 'JavaScript', level: 80, category: 'frontend' },
+  { name: 'JavaScript', level: 70, category: 'frontend' },
   { name: 'React', level: 80, category: 'frontend' },
   { name: 'Next.js', level: 80, category: 'frontend' },
-  { name: 'Typescript', level: 80, category: 'frontend' },
+  { name: 'Typescript', level: 70, category: 'frontend' },
   { name: 'Tailwind CSS', level: 80, category: 'frontend' },
 
-  { name: 'Node.js', level: 80, category: 'backend' },
-  { name: 'Java', level: 80, category: 'backend' },
-  { name: 'MySQL', level: 80, category: 'backend' },
-  { name: 'Git', level: 80, category: 'tools' },
-  { name: 'Docker', level: 80, category: 'tools' },
-  { name: 'Figma', level: 80, category: 'tools' },
+  // { name: 'Node.js', level: 80, category: 'backend' },
+  { name: 'Java', level: 50, category: 'backend' },
+  // { name: 'MySQL', level: 80, category: 'backend' },
+  { name: 'Git', level: 60, category: 'tools' },
+  // { name: 'Docker', level: 80, category: 'tools' },
+  { name: 'Figma', level: 70, category: 'tools' },
 ];
 
 const categories = ['all', 'frontend', 'backend', 'tools'];
@@ -67,7 +67,11 @@ export const SkillsSection = () => {
 
               <div className="mt-1 text-right">
                 <span className="text-muted-foreground text-sm">
-                  {skill.level}%
+                  {skill.level >= 90
+                    ? 'Expert'
+                    : skill.level >= 70 && skill.level < 90
+                      ? 'Intermediate'
+                      : 'Learning'}
                 </span>
               </div>
             </div>

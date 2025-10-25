@@ -3,30 +3,35 @@ import { ArrowRight, ExternalLink, Github } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: 'Project One',
-    description: 'Description for project one.',
-    img: '/projects/project1.png',
-    tags: ['React', 'JavaScript', 'CSS'],
-    demoUrl: '#',
-    githubUrl: '#',
+    title: 'My Portfolio Website',
+    description:
+      'A personal portfolio website showcasing my projects and skills.',
+    img: '/public/projects/project1.png',
+    tags: ['React', 'JavaScript', 'CSS', 'Tailwind CSS'],
+    demoUrl: 'https://khai-porfolio.vercel.app/',
+    githubUrl: 'https://github.com/lamkhai0604/khai-porfolio',
+    githubFlag: true,
   },
   {
     id: 2,
-    title: 'Project Two',
-    description: 'Description for project two.',
-    img: '/projects/project2.png',
+    title: 'Vietnam Student Forum',
+    description:
+      'Helping increase opportunities for interaction between students and the Vietnamese Students Association and its members.',
+    img: '/public/projects/project2.png',
     tags: ['React', 'JavaScript', 'CSS'],
-    demoUrl: '#',
+    demoUrl: 'https://svvn.hoisinhvien.com.vn/event',
     githubUrl: '#',
+    githubFlag: false,
   },
   {
     id: 3,
-    title: 'Project Three',
-    description: 'Description for project three.',
-    img: '/projects/project3.png',
+    title: 'Hello shop',
+    description: 'An e-commerce platform for buying and selling products.',
+    img: '/public/projects/project3.png',
     tags: ['React', 'JavaScript', 'CSS'],
-    demoUrl: '#',
-    githubUrl: '#',
+    demoUrl: 'https://khai-shop.vercel.app/',
+    githubUrl: 'https://github.com/lamkhai0604/ecommerce-project',
+    githubFlag: true,
   },
 ];
 
@@ -81,13 +86,15 @@ export const ProjectsSection = () => {
                     >
                       <ExternalLink size={20} />
                     </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
-                    </a>
+                    {project.githubFlag && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                      >
+                        <Github size={20} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

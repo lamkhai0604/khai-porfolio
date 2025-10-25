@@ -21,8 +21,10 @@ export const HeroSection = () => {
           </h1>
 
           <p className="tex text-muted-foreground animate-fade-in-delay-4 max-2-2xl mx-auto text-lg opacity-0 md:text-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            I’m a Computer Science student at the University of Washington
+            Tacoma with hands-on experience in frontend web development. I’m
+            always excited to learn, improve, and get inspired by the amazing
+            developers around me.
           </p>
 
           <div className="animate-fade-in-delay-5 pt-4 opacity-0">

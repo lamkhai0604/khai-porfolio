@@ -12,15 +12,17 @@ export const AboutSection = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">Passionate Web Developer</h3>
             <p className="text-muted-foreground">
-              With over 5 years of experience in web development, I specialize
-              in creating dynamic and responsive websites. My expertise lies in
-              JavaScript frameworks like React and Vue, as well as backend
-              technologies such as Node.js and Express.
+              I’m a Computer Science student at the University of Washington
+              Tacoma with hands-on experience in building responsive and
+              user-friendly web applications. My work focuses on creating clean,
+              interactive UIs using frameworks like React, Angular, and Next.js
+              — always aiming for wellness performance across devices.
             </p>
             <p className="text-muted-foreground">
-              I am a passionate developer with a love for creating beautiful and
-              functional web applications. My journey in tech has been driven by
-              a desire to learn and innovate.
+              I’m passionate about coding and constantly learning from
+              experienced developers to grow as a better engineer. My journey in
+              tech is fueled by curiosity, teamwork, and a genuine love for
+              solving problems through code.
             </p>
 
             <div className="flex flex-col justify-center gap-4 pt-4 sm:flex-row">
@@ -28,7 +30,8 @@ export const AboutSection = () => {
                 Get In Touch
               </a>
               <a
-                href="#contact"
+                href="/public/Khai_Resume.pdf"
+                download={true}
                 className="border-primary text-primary hover:bg-primary/10 rounded-full border px-6 py-2 transition-colors duration-300"
               >
                 Download CV
@@ -45,7 +48,8 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="text-lg font-semibold">Web Development</h4>
                   <p className="text-muted-foreground">
-                    Building responsive and interactive web applications.
+                    Building responsive and modern web applications with React,
+                    Next.js, and TypeScript.
                   </p>
                 </div>
               </div>
@@ -69,9 +73,10 @@ export const AboutSection = () => {
                   <Briefcase className="text-primary h-6 w-6" />
                 </div>
                 <div className="text-left">
-                  <h4 className="text-lg font-semibold">Web Development</h4>
+                  <h4 className="text-lg font-semibold">Continuous Learning</h4>
                   <p className="text-muted-foreground">
-                    Building responsive and interactive web applications.
+                    Always exploring new technologies and improving my coding
+                    skills through real-world projects.
                   </p>
                 </div>
               </div>

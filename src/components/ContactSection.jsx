@@ -77,7 +77,11 @@ export const ContactSection = () => {
 
           <div className="bg-card rounded-lg p-8 shadow-xs">
             <h3 className="mb-6 text-2xl font-semibold">Send a Message</h3>
-            <form className="space-y-6">
+            <form
+              action="https://formsubmit.co/lamkhai0604@gmail.com"
+              method="POST"
+              className="space-y-6"
+            >
               {/* Name */}
               <div>
                 <label
