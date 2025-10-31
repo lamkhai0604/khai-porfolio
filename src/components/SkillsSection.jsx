@@ -37,7 +37,7 @@ export const SkillsSection = () => {
             <button
               key={key}
               className={cn(
-                'rounded-full px-5 py-2 capitalize transition-colors duration-300',
+                'cursor-pointer rounded-full px-5 py-2 capitalize transition-colors duration-300',
                 activeCategory === category
                   ? 'bg-primary text-primary-foreground'
                   : 'bg-secondary/70 text-foreground hover:bg-secondary'
