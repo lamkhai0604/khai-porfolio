@@ -29,13 +29,13 @@ export const AboutSection = () => {
               <a href="#contact" className="cosmic-button">
                 Get In Touch
               </a>
-              <a
+              {/* <a
                 href="/public/Khai_Resume.pdf"
                 download={true}
                 className="border-primary text-primary hover:bg-primary/10 rounded-full border px-6 py-2 transition-colors duration-300"
               >
                 Download CV
-              </a>
+              </a> */}
             </div>
           </div>
 

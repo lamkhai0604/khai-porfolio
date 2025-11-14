@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { cn } from '../lib/utils';
 import { Menu, X } from 'lucide-react';
 
@@ -11,26 +11,9 @@ const navItems = [
 ];
 
 export const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
   return (
-    <nav
-      className={cn(
-        'fixed z-40 w-full transition-all duration-300',
-        isScrolled ? 'bg-background/80 py-3 shadow-xs backdrop-blur-md' : 'py-5'
-      )}
-    >
+    <nav className={cn('fixed z-40 w-full py-5 transition-all duration-300')}>
       <div className="container flex items-center justify-between">
         <a
           className="text-primary flex items-center text-xl font-bold"
