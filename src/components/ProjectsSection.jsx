@@ -1,114 +1,84 @@
 import { ArrowRight, ExternalLink, Github } from 'lucide-react';
+import { links, projects } from '../data/profile';
 
-const projects = [
-  {
-    id: 1,
-    title: 'My Portfolio Website',
-    description:
-      'A personal portfolio website showcasing my projects and skills.',
-    img: '/public/projects/project1.png',
-    tags: ['React', 'JavaScript', 'CSS', 'Tailwind CSS'],
-    demoUrl: 'https://khai-porfolio.vercel.app/',
-    githubUrl: 'https://github.com/lamkhai0604/khai-porfolio',
-    githubFlag: true,
-  },
-  {
-    id: 2,
-    title: 'Vietnam Student Forum',
-    description:
-      'Helping increase opportunities for interaction between students and the Vietnamese Students Association and its members.',
-    img: '/public/projects/project2.png',
-    tags: ['React', 'JavaScript', 'CSS'],
-    demoUrl: 'https://svvn.hoisinhvien.com.vn/event',
-    githubUrl: '#',
-    githubFlag: false,
-  },
-  {
-    id: 3,
-    title: 'Hello shop',
-    description: 'An e-commerce platform for buying and selling products.',
-    img: '/public/projects/project3.png',
-    tags: ['React', 'JavaScript', 'CSS'],
-    demoUrl: 'https://khai-shop.vercel.app/',
-    githubUrl: 'https://github.com/lamkhai0604/ecommerce-project',
-    githubFlag: true,
-  },
-];
+const IconLink = ({ href, label, children }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noreferrer"
+    aria-label={label}
+    className="text-foreground/80 hover:text-primary flex items-center gap-1.5 text-sm transition-colors duration-300"
+  >
+    {children}
+  </a>
+);
 
 export const ProjectsSection = () => {
   return (
     <section id="projects" className="relative px-4 py-24">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-center text-3xl font-bold md:text-4xl">
-          My <span className="text-primary">Projects</span>
+          Featured <span className="text-primary">Projects</span>
         </h2>
 
         <p className="text-muted-foreground mx-auto mt-4 mb-12 max-w-2xl text-center">
-          Here are some of the projects I've worked on. Each project showcases
-          my skills and creativity in web development. Feel free to explore
-          them!
+          Full-stack applications built end to end, from requirements and
+          design to tests and deployment.
         </p>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <div
+            <article
               key={project.id}
-              className="group bg-card card-hover overflow-hidden rounded-lg p-6 shadow-xs"
+              className="group bg-card card-hover flex flex-col overflow-hidden rounded-lg text-left shadow-xs"
             >
               <div className="h-48 overflow-hidden">
                 <img
                   src={project.img}
-                  alt={project.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  alt={`${project.title} screenshot`}
+                  loading="lazy"
+                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="p-6">
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="mb-2 text-xl font-semibold">{project.title}</h3>
+                <p className="text-muted-foreground mb-4 flex-1 text-sm">
+                  {project.description}
+                </p>
                 <div className="mb-4 flex flex-wrap gap-2">
-                  {project.tags.map((tag, index) => (
+                  {project.tags.map((tag) => (
                     <span
-                      key={index}
-                      className="bg-secondary text-secondary-foreground hover:bg-secondary rounded-full border px-2 py-1 text-xs font-medium"
+                      key={tag}
+                      className="bg-secondary text-secondary-foreground rounded-full border px-2 py-1 text-xs font-medium"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-
-                <h3 className="mb-1 text-xl font-semibold">{project.title}</h3>
-                <p className="text-muted-foreground mb-4 text-sm">
-                  {project.description}
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex space-x-3">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    {project.githubFlag && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                      >
-                        <Github size={20} />
-                      </a>
-                    )}
-                  </div>
+                <div className="flex items-center gap-5">
+                  {project.demoUrl && (
+                    <IconLink href={project.demoUrl} label={`${project.title} live demo`}>
+                      <ExternalLink size={18} /> Live demo
+                    </IconLink>
+                  )}
+                  {project.githubUrl && (
+                    <IconLink href={project.githubUrl} label={`${project.title} source code`}>
+                      <Github size={18} /> Code
+                    </IconLink>
+                  )}
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
         <div className="mt-12 text-center">
           <a
-            href="https://github.com/lamkhai0604?tab=repositories"
+            href={`${links.github}?tab=repositories`}
             target="_blank"
+            rel="noreferrer"
             className="cosmic-button mx-auto flex w-fit items-center gap-2"
           >
-            View All Projects <ArrowRight size={16} />
+            More on GitHub <ArrowRight size={16} />
           </a>
         </div>
       </div>

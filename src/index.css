@@ -10,6 +10,11 @@
 
   --color-card: hsl(var(--card));
 
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-input: hsl(var(--input));
+
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
   --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
@@ -94,7 +99,12 @@
     --primary: 250 47% 60%;
     --primary-foreground: 210 40% 98%;
 
+    --secondary: 250 40% 94%;
+    --secondary-foreground: 222 47% 20%;
+    --muted-foreground: 215 16% 40%;
+
     --border: 214 32% 91%;
+    --input: 214 32% 85%;
   }
 
   .dark {
@@ -106,7 +116,12 @@
     --primary: 250 65% 65%;
     --primary-foreground: 213 31% 91%;
 
+    --secondary: 222 30% 14%;
+    --secondary-foreground: 213 31% 85%;
+    --muted-foreground: 215 20% 68%;
+
     --border: 217 33% 20%;
+    --input: 217 33% 25%;
   }
 
   * {
@@ -148,6 +163,16 @@
   @media (width >=1400px) {
     max-width: 1400px;
   }
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(
+    to right,
+    hsl(var(--primary)),
+    hsl(var(--primary) / 0.6)
+  );
+  background-clip: text;
+  color: transparent;
 }
 
 @utility text-glow {

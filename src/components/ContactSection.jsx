@@ -2,19 +2,45 @@ import { Linkedin, Mail, MapPin, Send } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { ToastContainer, toast } from 'react-toastify';
 import { useState } from 'react';
+import { links } from '../data/profile';
+
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${links.email}`;
 
 export const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const notify = () => toast('Message sent successfully!');
-  const handleSubmit = (event) => {
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    const form = event.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
 
     setIsSubmitting(true);
-    setTimeout(() => {
-      notify();
-      event.target.reset();
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          ...data,
+          _subject: `Portfolio message from ${data.name}`,
+          _template: 'table',
+        }),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || String(result.success) !== 'true') {
+        throw new Error(result.message || 'Request failed');
+      }
+      toast.success('Thanks! Your message has been sent.');
+      form.reset();
+    } catch {
+      toast.error(
+        `Sorry, the message could not be sent. Please email me at ${links.email}.`
+      );
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
   return (
     <section id="contact" className="bg-secondary/30 relative px-4 py-24">
@@ -24,8 +50,8 @@ export const ContactSection = () => {
         </h2>
 
         <p className="text-muted-foreground mx-auto mt-4 mb-12 max-w-2xl text-center">
-          I'm always open to discussing new projects and ideas. If you'd like to
-          get in touch, feel free to reach out!
+          I’m looking for software engineering internships and always happy to
+          talk about projects. Feel free to reach out!
         </p>
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
@@ -39,10 +65,10 @@ export const ContactSection = () => {
               <div className="flex w-full flex-col items-start justify-center">
                 <h4 className="text-lg font-semibold">Email</h4>
                 <a
-                  href="mailto:lamkhai0604@gmail.com"
+                  href={`mailto:${links.email}`}
                   className="text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
-                  lamkhai0604@gmail.com
+                  {links.email}
                 </a>
               </div>
             </div>
@@ -54,7 +80,9 @@ export const ContactSection = () => {
               <div className="flex w-full flex-col items-start justify-center">
                 <h4 className="text-lg font-semibold">LinkedIn</h4>
                 <a
-                  href="https://www.linkedin.com/in/khailam0604/"
+                  href={links.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   khailam0604
@@ -68,20 +96,14 @@ export const ContactSection = () => {
               </div>
               <div className="flex w-full flex-col items-start justify-center">
                 <h4 className="text-lg font-semibold">Location</h4>
-                <a className="text-muted-foreground hover:text-primary transition-colors duration-300">
-                  Seattle, WA
-                </a>
+                <span className="text-muted-foreground">Seattle, WA</span>
               </div>
             </div>
           </div>
 
           <div className="bg-card rounded-lg p-8 shadow-xs">
             <h3 className="mb-6 text-2xl font-semibold">Send a Message</h3>
-            <form
-              action="https://formsubmit.co/lamkhai0604@gmail.com"
-              method="POST"
-              className="space-y-6"
-            >
+            <form onSubmit={handleSubmit} className="space-y-6 text-left">
               {/* Name */}
               <div>
                 <label
@@ -135,7 +157,6 @@ export const ContactSection = () => {
               </div>
               <button
                 type="submit"
-                onClick={handleSubmit}
                 disabled={isSubmitting}
                 aria-label="Send Message"
                 className={cn(

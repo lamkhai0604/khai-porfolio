@@ -1,50 +1,48 @@
-# 🌟 Khai's Portfolio
+# Khai Lam — Portfolio
 
-Welcome to my personal portfolio website, built to showcase my skills, experience, and featured projects as a front-end developer.
+Personal portfolio website: who I am, what I build, and how to reach me.
 
-This project is designed to serve as a professional introduction for potential employers, collaborators, or anyone curious about my work.
+**Live site:** https://khai-porfolio.vercel.app
 
----
+## Featured projects
 
-## 🛠️ Tech Stack
+| Project | Summary | Links |
+| --- | --- | --- |
+| Finding House | Room-rental and roommate-finding platform for Seattle with AI-assisted search. React, TypeScript, Spring Boot, PostgreSQL. | [Live](https://finding-house.vercel.app) · [Code](https://github.com/lamkhai0604/finding-house) |
+| CommerceFlow | E-commerce application with session authentication, CSRF protection and end-to-end tests. React, Spring Boot, PostgreSQL, Playwright. | [Code](https://github.com/lamkhai0604/ecommerce-project) |
+| Vietnam Student Forum | Event pages for the Vietnamese Students Association. | [Live](https://svvn.hoisinhvien.com.vn/event) |
 
-- **React** – Component-based architecture for fast, dynamic UIs
-- **Tailwind CSS** – Utility-first styling for responsive design
+## Tech stack
 
----
+- React 19 and Vite
+- Tailwind CSS 4
+- Lucide icons, react-toastify
+- Contact form delivered through [FormSubmit](https://formsubmit.co)
+- Hosted on Vercel
 
-## ✨ Features
+## Project structure
 
-- Clean and responsive layout across all screen sizes
-- Project highlights with descriptions and live links
-- Professional summary and skills section
-- Interactive UI with subtle animations
-- Contact information and call-to-action
-
----
-
-## 📦 Installation & Development
-
-```bash
-# Clone the repository
-git clone https://github.com/lamkhai0604/khai-porfolio.git
-
-# Navigate into the project directory
-cd khai-portfolio
-
-# Install dependencies
-npm install
-
-# Run the development server
-npm run dev
+```text
+public/            static files (favicon, project screenshots)
+src/
+  components/      page sections (Hero, About, Skills, Projects, Contact) and layout
+  data/profile.js  projects, skills and contact links — edit content here
+  pages/           Home and NotFound
+  index.css        theme tokens (light and dark) and animations
 ```
 
----
+## Running locally
 
-## 📦 Contact
+Requires Node 20 or later.
 
-Feel free to connect with me via:
+```bash
+npm install
+npm run dev       # development server on http://localhost:5173
+npm run build     # production build in dist/
+npm run lint
+```
 
-📧 Email: lamkhai0604@gmail.com
+## Contact
 
-💼 LinkedIn: linkedin.com/in/khailam0604
+- Email: lamkhai0604@gmail.com
+- LinkedIn: [khailam0604](https://www.linkedin.com/in/khailam0604/)
