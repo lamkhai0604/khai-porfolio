@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { cn } from '../lib/utils';
 import { Menu, X } from 'lucide-react';
 
@@ -12,8 +12,31 @@ const navItems = [
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   return (
-    <nav className={cn('fixed z-40 w-full py-5 transition-all duration-300')}>
+    <nav
+      className={cn(
+        'fixed z-40 w-full transition-all duration-300',
+        isScrolled
+          ? 'bg-background/80 py-3 shadow-xs backdrop-blur-md'
+          : 'py-5'
+      )}
+    >
       <div className="container flex items-center justify-between">
         <a
           className="text-primary flex items-center text-xl font-bold"
@@ -21,12 +44,12 @@ export const Navbar = () => {
         >
           <span className="relative z-10">
             <span className="text-glow text-foreground mr-1">Khai</span>
-            Porfolio
+            Lam
           </span>
         </a>
 
         {/* DESKTOP */}
-        <div className="hidden space-x-8 md:flex">
+        <div className="hidden space-x-8 md:mr-14 md:flex">
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -60,6 +83,7 @@ export const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
+                onClick={() => setIsMenuOpen(false)}
                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
               >
                 {item.name}
