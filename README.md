@@ -10,7 +10,6 @@ Personal portfolio website: who I am, what I build, and how to reach me.
 | --- | --- | --- |
 | Finding House | Room-rental and roommate-finding platform for Seattle with AI-assisted search. React, TypeScript, Spring Boot, PostgreSQL. | [Live](https://finding-house.vercel.app) · [Code](https://github.com/lamkhai0604/finding-house) |
 | CommerceFlow | E-commerce application with session authentication, CSRF protection and end-to-end tests. React, Spring Boot, PostgreSQL, Playwright. | [Code](https://github.com/lamkhai0604/ecommerce-project) |
-| Vietnam Student Forum | Event pages for the Vietnamese Students Association. | [Live](https://svvn.hoisinhvien.com.vn/event) |
 
 ## Tech stack
 

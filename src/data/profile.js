@@ -24,15 +24,6 @@ export const projects = [
     tags: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'Playwright'],
     githubUrl: 'https://github.com/lamkhai0604/ecommerce-project',
   },
-  {
-    id: 'student-forum',
-    title: 'Vietnam Student Forum',
-    description:
-      'Event pages for the Vietnamese Students Association, helping students connect with the association and its members.',
-    img: '/projects/student-forum.png',
-    tags: ['React', 'JavaScript', 'CSS'],
-    demoUrl: 'https://svvn.hoisinhvien.com.vn/event',
-  },
 ];
 
 export const skillGroups = [
