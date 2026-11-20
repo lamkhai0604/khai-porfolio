@@ -9,7 +9,8 @@ Personal portfolio website: who I am, what I build, and how to reach me.
 | Project | Summary | Links |
 | --- | --- | --- |
 | Finding House | Room-rental and roommate-finding platform for Seattle with AI-assisted search. React, TypeScript, Spring Boot, PostgreSQL. | [Live](https://finding-house.vercel.app) · [Code](https://github.com/lamkhai0604/finding-house) |
-| CommerceFlow | E-commerce application with session authentication, CSRF protection and end-to-end tests. React, Spring Boot, PostgreSQL, Playwright. | [Code](https://github.com/lamkhai0604/ecommerce-project) |
+| CommerceFlow | E-commerce application with idempotent checkout, session authentication, CSRF protection and end-to-end tests. React, Spring Boot, PostgreSQL, Playwright. | [Live](https://khai-shop.vercel.app) · [Code](https://github.com/lamkhai0604/commerceflow) |
+| AlgoQuest (in progress) | Gamified web app for learning interview algorithm patterns, with AI grading of written explanations. React, Spring Boot, PostgreSQL, Gemini API. | [Code](https://github.com/lamkhai0604/algoquest) |
 
 ## Tech stack
 

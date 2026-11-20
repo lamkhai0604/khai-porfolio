@@ -19,10 +19,20 @@ export const projects = [
     id: 'commerceflow',
     title: 'CommerceFlow',
     description:
-      'An e-commerce application with a React storefront and a Spring Boot API. Session authentication with roles, CSRF protection and HTTPS, covered by unit, integration and real-browser end-to-end tests.',
+      'An e-commerce application with a React storefront and a Spring Boot API: catalog, guest and member carts, idempotent checkout, order tracking and an admin area. Session authentication with roles, CSRF protection and HTTPS, covered by unit, integration and real-browser end-to-end tests.',
     img: '/projects/commerceflow.png',
     tags: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'Playwright'],
-    githubUrl: 'https://github.com/lamkhai0604/ecommerce-project',
+    demoUrl: 'https://khai-shop.vercel.app',
+    githubUrl: 'https://github.com/lamkhai0604/commerceflow',
+  },
+  {
+    id: 'algoquest',
+    title: 'AlgoQuest',
+    status: 'In progress',
+    description:
+      'A gamified web app for learning the algorithm patterns used in coding interviews. Players explain their approach in words, and an AI grades the explanation against a teacher-written answer key; optional Java code runs in a sandbox. Levels from Big-O basics through recursion are playable, with more in development.',
+    tags: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'Gemini API'],
+    githubUrl: 'https://github.com/lamkhai0604/algoquest',
   },
 ];
 
@@ -33,14 +43,14 @@ export const skillGroups = [
   },
   {
     name: 'Backend',
-    skills: ['Java', 'Spring Boot', 'Spring Security', 'REST APIs', 'PostgreSQL'],
+    skills: ['Java', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'REST APIs', 'PostgreSQL', 'Flyway'],
   },
   {
     name: 'AI & Testing',
-    skills: ['LLM API integration', 'JUnit', 'Vitest / Jest', 'Playwright'],
+    skills: ['LLM API integration (Groq, Gemini)', 'JUnit', 'Testcontainers', 'Vitest / Jest', 'Playwright'],
   },
   {
     name: 'Tools',
-    skills: ['Git & GitHub', 'GitHub Actions', 'Docker', 'Vercel', 'Figma'],
+    skills: ['Git & GitHub', 'GitHub Actions', 'Docker', 'Vercel', 'Render', 'Figma'],
   },
 ];

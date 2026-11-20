@@ -36,6 +36,14 @@ export const HeroSection = () => {
               View My Work
             </a>
             <a
+              className="border-border hover:border-primary hover:text-primary rounded-full border px-6 py-2 font-medium transition-colors"
+              href="/Khai_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Resume
+            </a>
+            <a
               href={links.github}
               target="_blank"
               rel="noreferrer"
