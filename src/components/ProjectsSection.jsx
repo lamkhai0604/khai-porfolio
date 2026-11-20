@@ -25,19 +25,35 @@ export const ProjectsSection = () => {
           Full-stack applications built end to end, from requirements and
           design to tests and deployment.
         </p>
-        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <article
               key={project.id}
               className="group bg-card card-hover flex flex-col overflow-hidden rounded-lg text-left shadow-xs"
             >
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={project.img}
-                  alt={`${project.title} screenshot`}
-                  loading="lazy"
-                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                />
+              <div className="relative h-48 overflow-hidden">
+                {project.img ? (
+                  <img
+                    src={project.img}
+                    alt={`${project.title} screenshot`}
+                    loading="lazy"
+                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div
+                    aria-hidden="true"
+                    className="from-primary/20 to-secondary flex h-full w-full items-center justify-center bg-gradient-to-br"
+                  >
+                    <span className="text-primary text-4xl font-bold tracking-tight">
+                      {project.title}
+                    </span>
+                  </div>
+                )}
+                {project.status && (
+                  <span className="bg-primary text-primary-foreground absolute top-3 right-3 rounded-full px-3 py-1 text-xs font-semibold">
+                    {project.status}
+                  </span>
+                )}
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="mb-2 text-xl font-semibold">{project.title}</h3>
